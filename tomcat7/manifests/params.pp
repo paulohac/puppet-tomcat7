@@ -7,11 +7,11 @@ class tomcat7::params {
         $tomcat_path = "/tomcat"
         $tomcat_pass = "123mudar"
         $java_home = "/opt/java"
-        
+
         #service variables
         $service_name = "tomcat"
         $service_enable = "true"
         $service_ensure = "running"
-        $service_status = "service tomcat status"
+        $service_status = "false"
+        $service_restart = "true"
 }
-
