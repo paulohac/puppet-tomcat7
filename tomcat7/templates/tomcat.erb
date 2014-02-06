@@ -34,7 +34,7 @@
           # Start daemon.
           echo -n "Starting Tomcat: "
           su - <%= @tomcat_user %> -c <%= @tomcat_home %>/bin/startup.sh
- 	  RETVAL=$?
+          RETVAL=$?
           echo
           [ $RETVAL = 0 ] && touch /var/lock/subsys/tomcat
           ;;
@@ -53,14 +53,10 @@
     condrestart)
          [ -e /var/lock/subsys/tomcat ] && $0 restart
          ;;
-    status)
-          status tomcat
-          ;;
     *)
-          echo "Usage: $0 {start|stop|restart|status}"
+          echo "Usage: $0 {start|stop|restart}"
           exit 1
   esac
 
   exit 0
-
-
+  
