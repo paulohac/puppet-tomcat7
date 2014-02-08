@@ -27,11 +27,12 @@ file {
         require => [File["${tomcat_path}/${tomcat_package}"], User['user_tomcat']];
 
      'tomcat_owner':
-                path    => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
-                cwd     => $tomcat_path,
-                command => "/bin/chown -R ${tomcat_user}. ${tomcat_path}",
-                require => Exec['Install_tomcat']
-        }
+        path    => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+        cwd     => $tomcat_path,
+        command => "/bin/chown -R ${tomcat_user}. ${tomcat_path}",
+        require => Exec['Install_tomcat']
+        
+    }
 
 }
 
