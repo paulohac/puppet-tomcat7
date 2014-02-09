@@ -12,14 +12,14 @@ class tomcat7::install (
       source  => "puppet:///modules/tomcat7/${tomcat_package}",
       mode    => '0755',
       require => Class["java"]
-  }->
+  } ->
   
   exec {
     'Install_tomcat':
       path    => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
       cwd     => $tomcat_path,
       command => $tomcat_extract"tar -xzf ${tomcat_path}/${tomcat_package}",
-  }->
+  } ->
   
   exec {
     'tomcat_owner':
